@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:task="http://www.springframework.org/schema/task"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/task  
+		http://www.springframework.org/schema/task/spring-task-3.1.xsd  ">
+	<task:annotation-driven/>  
+	<context:component-scan base-package="com.swn" use-default-filters="false">
+		<context:include-filter type="annotation" 
+			expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter type="annotation" 
+			expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+	</context:component-scan>
+	<!-- 实际开发中都要配置mvc:annotation-driven -->
+	<mvc:annotation-driven>
+		<mvc:message-converters>  
+	        <bean class="org.springframework.http.converter.StringHttpMessageConverter">  
+	            <property name="supportedMediaTypes" value="text/html;charset=utf-8"></property>  
+	        </bean>  
+	    </mvc:message-converters>
+	</mvc:annotation-driven>
+	<!--  配置静态资源访问 -->
+    <mvc:default-servlet-handler/>
+    
+    <!-- 配置直接转发的界面 -->
+	<!-- 直接转向请求界面，而无需走Controller 。但需要配mvc:annotation-driven，否则会影响其他调用 -->
+	<mvc:view-controller path="/success" view-name="success" />
+	
+	<!-- 暂时注释掉，dfs上传与spring上传冲突 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<property name="maxUploadSize" value="10240000000000000"></property>
+	</bean> 
+	
+	<!-- 配置自定义扫描的包 -->
+	<!--<context:component-scan base-package="com.tdt.springdemo"/> -->
+	<!-- 配置视图解析器: 如何把 handler 方法返回值解析为实际的物理视图 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	
+	<!-- 配置视图  BeanNameViewResolver 解析器: 使用视图的名字来解析视图 -->
+	<!-- 通过 order 属性来定义视图解析器的优先级, order 值越小优先级越高 -->
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="100"></property>
+	</bean>
+	
+</beans>

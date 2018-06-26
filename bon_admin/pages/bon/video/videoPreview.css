@@ -1,0 +1,282 @@
+body,div,p,ul,ol,h1,h2,h3,h4,h5,h6,label,input{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: PingFangSC-Regular, sans-serif;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    border: none;
+    display: block;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clear::after {
+    content: ".";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    height: 0;
+}
+.clear{
+    zoom: 1;
+}
+.fiex{
+    display: flex;
+    flex-wrap:wrap;
+}
+.viewport{
+    min-width: 320px;
+    max-width: 750px;
+    margin: 0 auto;
+    position: relative;
+    /*background: #F2F2F7;*/
+    overflow: hidden;
+}
+.viewport>div{
+    background: #fff;
+    padding: .2rem .3rem;
+    position: relative;
+    color: #404040;
+}
+/*评论区*/
+.commentModule{
+    margin-top:.2rem;
+}
+.commentModule .title{
+    padding-bottom: .1rem
+}
+.commentModule .commentPeople{
+    margin: .2rem 0;
+}
+.commentModule .commentPeople .replyBtn{
+    width: .9rem;
+    text-align: center;
+    height: .5rem;
+    line-height: .5rem;
+    margin-left: .17rem;
+    margin-top: .1rem;
+    background: #FF9F0D;
+    color: #fff;
+    font-size: .13rem;
+    border: 1px solid #ddd;
+    border-radius: .35rem;
+    cursor: pointer;
+}
+.commentModule .commentPeople input{
+    width: 5.6rem;
+    height: .7rem;
+    line-height: .7rem;
+    padding-left: .2rem;
+    background: #F1F1F2;
+    border-radius: .35rem;
+    font-size: .13rem;
+    color: #666;
+    border: none;
+}
+/*  没有评论  */
+.commentModule .noComment{
+    padding: .3rem 0;
+    height: 1.1rem;
+    line-height: .5rem;
+    font-size: .13rem;
+    color: #999;
+}
+.commentModule .noComment img{
+    width: .5rem;
+    height: .5rem;
+    margin-left: 1.7rem;
+}
+/*  评论列表  */
+.commentModule .commentList{
+    padding: .2rem 0 .3rem;
+    border-bottom: 1px solid #EFEFF2;
+    overflow: hidden;
+}
+.commentModule .commentList .portrait{
+    width: .7rem;
+    margin-right: .23rem;
+}
+.commentModule .commentList .content{
+    width: 5.97rem;
+}
+.commentModule .portrait img{
+    width: .7rem;
+    height: .7rem;
+    display: block;
+}
+.commentModule .commentList .peopleName{
+    font-size: .14rem;
+    color: #666
+}
+.commentModule .commentList .peopleName .time{
+    font-size: .11rem;
+    color: #999
+}
+.commentModule .commentList .peopleName img{
+    width: .18rem;
+    height: .18rem;
+    margin-right: .1rem;
+}
+.commentModule .commentList .commentCon{
+    margin-top: .2rem;
+    font-size: .14rem;
+}
+.commentModule .commentList .replyPeople{
+    margin-top: .2rem;
+    width: 7.5rem;
+    padding: .1rem .2rem;
+    background: #F1F1F2;
+    border-radius: .1rem;
+    font-size: .14rem;
+    color: #666;
+}
+.commentModule .more{
+    padding: .2rem 0;
+    text-align: center;
+    font-size: .14rem;
+    color: #999;
+    border-bottom: 1px solid #EFEFF2;
+}
+.commentModule .more img{
+    width: .11rem;
+    height: .1rem;
+}
+.commentModule .listMore{
+    cursor: pointer;
+}
+.commentModule .operation{
+    width: .8rem;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    right: -1.5rem;
+    transition: right 1s;
+}
+.commentModule .operation span{
+    cursor: pointer;
+}
+.title1{
+    font-size: .17rem;
+    font-weight: bold;
+}
+
+
+/*视频区*/
+.videoBox>video{
+    width:100%;
+}
+.moneyTips{
+    width:100%;
+    font-size:.14rem;
+}
+/*视频信息*/
+.videoInfo{
+    width:100%;
+}
+.videoInfo>.videoTitle{
+    width:6.9rem;
+    font-size:.3rem;
+    color:#404040;
+}
+.videoInfo>.infoBottom{
+    margin-top:.1rem;
+}
+.videoInfo>.infoBottom>span{
+    float:left;
+    margin-right: .1rem;
+}
+.videoInfo>.infoBottom>img{
+    float:left;
+}
+.videoInfo>.infoBottom img:nth-child(1){
+    width:.27rem;
+    height:.2rem;
+    margin-right: .1rem;
+}
+.videoInfo>.infoBottom img:nth-child(3){
+    width:.2rem;
+    height:.2rem;
+    margin-right: .1rem;
+}
+.videoInfo>.infoBottom{
+    font-size:.2rem;
+}
+/*主播信息*/
+.hoster_info{
+    width:6.9rem;
+    margin:0.1rem auto;
+}
+.hoster_info>span{
+    display:block;
+}
+.icon_box{
+    margin-top:.1rem;
+}
+.hoster_info>span{
+    font-size:.2rem
+}
+.hoster_info>p{
+    font-size:.14rem;
+    margin-top:.2rem;
+}
+/*主播头像*/
+.hoster_icon>img{
+    width:.74rem;
+    height:.74rem;
+    border-radius:50%;
+    float:left;
+}
+.hoster_name{
+    font-size: .2rem;
+    color: #999999;
+    float: left;
+    margin-top: 0.1rem;
+    margin-left:.3rem;
+}
+.hoster_focus{
+    font-size:.1rem;
+    color:#999999;
+    float:left;
+    margin-top:.5rem;
+    margin-left:-.8rem;
+}
+/*视频的内容介绍*/
+.videoContent{
+    width:6.9rem;
+    color:#404040;
+    font-size:.14rem;
+}
+/*返回按钮*/
+.back{
+    padding:0;
+    cursor:pointer;
+}
+.back:after{
+    clear:both;
+    display:block;
+    content:'';
+}
+.back>span{
+    float:left;
+    font-size:.2rem;
+}
+.back>img{
+    width:.3rem;
+    height:.3rem;
+    float:left;
+}
+

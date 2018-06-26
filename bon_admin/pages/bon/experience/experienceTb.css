@@ -1,0 +1,42 @@
+.shanpin {
+	width: 100%;
+}
+
+.shanpin input {
+	display: inline-block;
+}
+
+.shanpin img {
+	margin-top: 20px;
+	width: 70px;
+	height: 54px;
+}
+
+.shanpin div {
+	width: 66%;
+	height: 80px;
+	margin-left: 2%;
+	display: inline-block;
+	text-align: center;
+	line-height: 80px;
+}
+
+@media screen and (max-width:768px) {
+	.shanpin div {
+		width: 66%;
+		height: 100px;
+		margin-left: 2%;
+		display: inline-block;
+		overflow: hidden;
+	}
+}
+
+.shanpin div a {
+	color: blue;
+}
+
+.shanpin div.shanpinimg {
+	float: left;
+	width: 100%;
+	overflow: hidden;
+}

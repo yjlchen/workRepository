@@ -1,0 +1,172 @@
+/*****************     样式初试化      **************************/
+body,div,p,ul,ol,h1,h2,h3,h4,h5,h6,label,input{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: PingFangSC-Regular, sans-serif;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    border: none;
+    display: block;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clear::after {
+    content: ".";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    height: 0;
+}
+.clear{
+    zoom: 1;
+}
+.viewport{
+    min-width: 320px;
+    max-width: 750px;
+    margin: 0 auto;
+    position: relative;
+    background: #F2F2F7;
+    overflow: hidden;
+}
+/*    页面样式   */
+/*  遮罩层  */
+.shade{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    z-index: 999;
+    background: rgba(0, 0, 0, .6)
+}
+.viewport>div{
+    background: #fff;
+}
+/*  tab导航  */
+.menu{
+    padding: .3rem;
+    border-bottom: 1px solid #EDEDF0;
+    position:sticky;
+    top:0;
+}
+.menu>div{
+    width: 25%;
+    position: relative;
+    text-align: center;
+    font-size: .26rem;
+    color: #999;
+    cursor: pointer;
+}
+.menu>div img{
+    display: none;
+    position: absolute;
+    left: .55rem;
+    top: .4rem;
+    width: .68rem;
+    height: .06rem;
+}
+.menu .active{
+    color: #43CEA9
+}
+.menu .active img{
+    display: block;
+}
+.menu .num{
+    background: #f00;
+    margin-left: .1rem;
+    padding: 0 .11rem;
+    color: #fff;
+    border-radius: 50%;
+}
+/*  通用  */
+/*    标题  */
+.title{
+    font-size: .28rem;
+    color: #666;
+}
+/*    时间  */
+.time{
+    font-size: .24rem;
+    color: #999;
+}
+/*    内容  */
+.content{
+    margin-top: .25rem;
+    line-height: 1.6;
+    font-size: .28rem;
+    color: #404040;
+}
+/*    关于内容  */
+.restMes{
+    width: 100%;
+    margin-top: .15rem;
+    padding: .2rem .25rem;
+    background: #F2F2F2;
+    line-height: 1.6;
+    border-radius: .1rem;
+    font-size: .28rem;
+    color: #999;
+}
+/*    头像  */
+.img{
+    width: 1rem;
+}
+/*    所有内容  */
+.contents{
+    width: 5.9rem;
+    padding-left: .2rem;
+}
+.img img{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+/*     回复，@人  */
+.people{
+    font-size: .28rem;
+    color: #999
+}
+/*  系统通知，我的评论，评论与@我，通知  */
+.module>div{
+    padding: .3rem;
+    border-bottom: 1px solid #EDEDF0;
+}
+.module>div:last-child{
+    border: none;
+}
+/*   评论与@我中的回复  */
+.reply{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 1rem;
+    padding: .17rem .3rem;
+    background: #fff;
+    border-top: 1px solid #EDEDF0;
+    z-index: 9999
+}
+.reply input{
+    width:100%;
+    height:.64rem;
+    line-height:.64rem;
+    padding-left:.3rem;
+    font-size:.26rem;
+    color:#999;
+    border:1px solid #EDEDF0;
+    border-radius:.32rem;
+}

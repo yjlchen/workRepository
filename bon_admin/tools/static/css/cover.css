@@ -1,0 +1,206 @@
+#zhezhao {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.round-head {
+  /*width: 100%;*/
+  height: 50px!important;
+  background-color:#393D49!important;
+  margin: 10px 0;
+  padding:0 25px!important;
+  overflow: hidden;
+}
+.round-head img {
+  width: 100%;
+  height:100%;
+}
+.sidebar-container {
+  position: fixed;
+  height: 100%;
+}
+#pc-first-sidebar {
+  float: left;
+  height: 100%;
+}
+.pc-second-sidebar {
+  float: left;
+  height: 100%;
+}
+#pc-first-sidebar .layui-nav-tree {
+  width: 100px;
+}
+.pc-second-sidebar .layui-nav-tree {
+  width: 110px;
+}
+.layui-nav-tree .layui-nav-item a {
+  text-align: center;
+}
+.layui-nav {
+  height: 100%;
+}
+.pc-second-sidebar .layui-nav {
+  height: 100%;
+  background-color: #ffffff;
+  color: #393D49;
+}
+.pc-second-sidebar .layui-nav .layui-nav-item a {
+  color: #333;
+}
+.pc-second-sidebar .layui-nav .layui-nav-item a:hover {
+  color: #fff;
+}
+.pc-second-sidebar ul li:first-child {
+  text-align: center;
+  height: 54px;
+  line-height: 54px;
+  border-bottom: 1px solid #f2f2f2;
+  border-right: 1px solid #f2f2f2;
+}
+#pc-first-sidebar ul li .sidebar-icon {
+  position: absolute;
+  top: 14px;
+  left: 10px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  background: url("../images/sidebar-icon.png") no-repeat;
+}
+.iframe-container {
+  height: 100%;
+}
+#pc-first-sidebar ul li .sidebar-icon-dashboard {
+  background-position: 0 0;
+}
+#pc-first-sidebar ul li .sidebar-icon-shop {
+  background-position: 0 -18px;
+}
+#pc-first-sidebar ul li .sidebar-icon-goods {
+  background-position: 0 -36px;
+}
+#pc-first-sidebar ul li .sidebar-icon-order {
+  background-position: 0 -54px;
+}
+#pc-first-sidebar ul li .sidebar-icon-fans {
+  background-position: 0 -72px;
+}
+#pc-first-sidebar ul li .sidebar-icon-data {
+  background-position: 0 -90px;
+}
+#pc-first-sidebar ul li .sidebar-icon-asset {
+  background-position: 0 -108px;
+}
+#pc-first-sidebar ul li .sidebar-icon-app {
+  background-position: 0 -126px;
+}
+#pc-first-sidebar ul li .sidebar-icon-setting {
+  background-position: 0 -144px;
+}
+#pc-first-sidebar ul li .sidebar-icon-youzan {
+  background-position: 0 -162px;
+}
+#pc-first-sidebar ul li .sidebar-icon-exit {
+  background-position: -3px -198px;
+}
+#pc-first-sidebar ul li.layui-this .sidebar-icon-dashboard {
+  background-position: -18px 0;
+}
+#pc-first-sidebar ul li.layui-this .sidebar-icon-shop {
+  background-position: -18px -18px;
+}
+#pc-first-sidebar ul li.layui-this .sidebar-icon-goods {
+  background-position: -18px -36px;
+}
+#pc-first-sidebar ul li.layui-this .sidebar-icon-order {
+  background-position: -18px -54px;
+}
+#pc-first-sidebar ul li.layui-this .sidebar-icon-fans {
+  background-position: -18px -72px;
+}
+#pc-first-sidebar ul li.layui-this .sidebar-icon-stat {
+  background-position: -18px -90px;
+}
+#pc-first-sidebar ul li.layui-this .sidebar-icon-asset {
+  background-position: -18px -108px;
+}
+#pc-first-sidebar ul li.layui-this .sidebar-icon-app {
+  background-position: -18px -126px;
+}
+#pc-first-sidebar ul li.layui-this .sidebar-icon-setting {
+  background-position: -18px -144px;
+}
+#pc-first-sidebar ul li.layui-this .sidebar-icon-youzan {
+  background-position: -18px -162px;
+}
+#pc-first-sidebar ul li.layui-this .sidebar-icon-exit {
+  background-position: -18px -198px;
+}
+.inner-page-top {
+  width: auto;
+  /* border-bottom: 1px solid #e5e5e5;*/
+  padding: 18px 21px 17px;
+}
+.inner-page-main {
+  border: 1px solid #e5e5e5;
+  background-color: #F2F2F2;
+  height: auto;
+  overflow: hidden;
+}
+.inner-page-main-container {
+  border:1px solid #e5e5e5;
+  margin: 10px;
+  padding: 15px;
+  background-color: #fff;
+  height: auto;
+  overflow: hidden;
+}
+#pc-first-sidebar ul li .sidebar-icon-dashboard-no-auth {
+  background-position: -36px 0
+}
+
+#pc-first-sidebar ul li .sidebar-icon-shop-no-auth {
+  background-position: -36px -18px
+}
+
+#pc-first-sidebar ul li .sidebar-icon-goods-no-auth {
+  background-position: -36px -36px
+}
+
+#pc-first-sidebar ul li .sidebar-icon-order-no-auth {
+  background-position: -36px -54px
+}
+
+#pc-first-sidebar ul li .sidebar-icon-fans-no-auth {
+  background-position: -36px -72px
+}
+
+#pc-first-sidebar ul li .sidebar-icon-data-no-auth {
+  background-position: -36px -90px
+}
+
+#pc-first-sidebar ul li .sidebar-icon-asset-no-auth {
+  background-position: -36px -108px
+}
+
+#pc-first-sidebar ul li .sidebar-icon-app-no-auth {
+  background-position: -36px -126px
+}
+
+#pc-first-sidebar ul li .sidebar-icon-setting-no-auth {
+  background-position: -36px -144px
+}
+
+#pc-first-sidebar ul li .sidebar-icon-youzan-no-auth {
+  background-position: -36px -162px
+}
+#pc-first-sidebar ul li .sidebar-icon-exit-no-auth {
+  background-position: -36px -198px;
+}
+
+.no-auth{
+  color: #999!important;
+}

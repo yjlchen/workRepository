@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding:0;
+}
+ul li{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+a{
+    text-decoration:none;
+}
+/**概况头部**/
+.out_box{
+    width:100%;
+    height:auto;
+    padding: .4rem 0rem;
+    font-size:.14rem;
+    background: #F8F8F8;
+    text-align: center;
+    -webkit-transition: padding 0.5s;
+    -moz-transition: padding 0.5s;
+    transition: padding 0.5s;
+}
+.out_box>li{
+    width:calc(100%/6);
+    float:left;
+}
+.out_box>li>h5>a{
+    color:#38f;
+    font-size:.24rem;
+}
+.out_box>li>h6{
+    color: inherit;
+    font-weight:normal;
+    text-rendering: optimizelegibility;
+}

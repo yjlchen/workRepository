@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd
+        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- 配置自定义扫描的包 -->
+	<context:component-scan base-package="com.swn">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+	</context:component-scan>
+	<!-- 配置dataSource,由Spring容器来管理JdbcTemplate -->
+	<!-- <bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath*:db.properties</value>
+			</list>
+		</property>
+	</bean> -->
+	<bean id="dataSourceProperties" class="com.swn.common.util.PropertiesEncryptFactoryBean"
+		init-method="initPro">
+		<!-- <property name="properties">
+			<props>
+				<prop key="user">${username}</prop>
+				<prop key="password">${password}</prop>
+			</props>
+		</property> -->
+	</bean>
+
+
+	<!-- 配置连接池 -->
+	<!--用apache的dbcp建立数据库连接池 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="properties" ref="dataSourceProperties" />
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<!-- <property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:orcl" /> -->
+		<!-- 在这添加数据库名，表名会自动判断 --> 
+		<property name="jdbcUrl" value="jdbc:mysql://192.168.2.199:3306/bon_admin" />
+		<!-- <property name="jdbcUrl" value="jdbc:mysql://153.36.236.225:3306/bon_admin" /> --><!-- 江苏 -->
+		<!--连接池中保留的最大连接数。默认值: 15 -->
+		<property name="maxPoolSize" value="60" />
+		<!-- 连接池中保留的最小连接数，默认为：3 -->
+		<property name="minPoolSize" value="3" />
+		<!-- 初始化连接池中的连接数，取值应在minPoolSize与maxPoolSize之间，默认为3 -->
+		<property name="initialPoolSize" value="3" />
+
+		<!-- 当连接池连接耗尽时，客户端调用getConnection()后等待获取新连接的时间，超时后将抛出SQLException，如设为0则无限期等待。单位毫秒。默认: 
+			0 -->
+		<property name="checkoutTimeout" value="20000" />
+
+		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。默认值: 3 -->
+		<property name="acquireIncrement" value="2" />
+
+		<!--定义在从数据库获取新连接失败后重复尝试的次数。默认值: 30 ；小于等于0表示无限次 -->
+		<property name="acquireRetryAttempts" value="30" />
+
+		<!--重新尝试的时间间隔，默认为：1000毫秒 -->
+		<property name="acquireRetryDelay" value="1000" />
+
+		<!--关闭连接时，是否提交未提交的事务，默认为false，即关闭连接，回滚未提交的事务 -->
+		<property name="autoCommitOnClose">
+			<value>false</value>
+		</property>
+
+		<!--如果为false，则获取连接失败将会引起所有等待连接池来获取连接的线程抛出异常，但是数据源仍有效保留，并在下次调用getConnection()的时候继续尝试获取连接。如果设为true，那么在尝试获取连接失败后该数据源将申明已断开并永久关闭。默认: 
+			false -->
+		<property name="breakAfterAcquireFailure">
+			<value>false</value>
+		</property>
+
+		<!--每60秒检查所有连接池中的空闲连接。默认值: 0，不检查 -->
+		<property name="idleConnectionTestPeriod">
+			<value>60</value>
+		</property>
+		<!--c3p0全局的PreparedStatements缓存的大小。如果maxStatements与maxStatementsPerConnection均为0，则缓存不生效，只要有一个不为0，则语句的缓存就能生效。如果默认值: 
+			0 -->
+		<property name="maxStatements">
+			<value>100</value>
+		</property>
+	</bean>
+	<!-- 面向切面编程 -->
+	<aop:config>
+		<aop:pointcut id="jdbcServiceMethod"
+			expression="execution(* com.swn..service.*.*(..)))" />
+		<aop:advisor pointcut-ref="jdbcServiceMethod" advice-ref="txjdbcAdvice" />
+	</aop:config>
+	<tx:advice id="txjdbcAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+		<!-- propagation :事务传播行为 isolation :事务的隔离级别 read-only :只读 rollback-for:发生哪些异常回滚 no-rollback-for :发生哪些异常不回滚 timeout :过期信息 -->
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="execute*" propagation="REQUIRED" />
+			<tx:method name="batch*" propagation="REQUIRED" />
+			<tx:method name="query*" read-only="true" />
+			<!-- 对多个表操作，但是没有必要添加业务的操作，可以单独配置。 （如所有操作必须放在同一事务，则所有被调用的方法都要遵循以update等开头。） 
+				（第一步操作成功，第二步是否成功不关键，如在方法内记录操作日志，日志失败不应影响正常做业务数据库操作） -->
+			<tx:method name="*" propagation="NOT_SUPPORTED" />
+		</tx:attributes>
+	</tx:advice>
+	 <!-- jdbc事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- End 那些类的哪些方法参与事务 Aop 事务 -->
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+	<bean id="namedParameterJdbcTemplate"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	<!--事务模板 -->
+	<bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+	    <property name="isolationLevelName" value="ISOLATION_READ_COMMITTED"/>  
+	    <property name="timeout" value="30"/>
+	    <property name="transactionManager" ref="transactionManager"/>
+	</bean>
+	<!--引入其它spring配置文件:如在Tomcat下，以下用通配符spring_*.xml；但webLogic不支持 -->
+	<!-- <import resource="classpath:/spring_cache.xml" /> <import resource="classpath:/spring_activiti.xml" 
+		/> -->
+	<!-- <import resource="classpath:/spring_task.xml" /> -->
+	<!-- <import resource="classpath:/spring_activiti.xml" /> -->
+	<!-- <import resource="classpath:/spring_webService_cxf.xml" /> -->
+	<!-- <import resource="classpath:/spring_mongo.xml" /> -->
+</beans>

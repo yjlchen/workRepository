@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>商城后台</title>
+    <link rel="stylesheet" href="layui1.0.9/css/layui.css">
+    <link rel="stylesheet" href="static/css/cover.css">
+</head>
+<body>
+    <!--左侧导航开始-->
+    <nav class="sidebar-container" >
+        <div id="pc-first-sidebar" class="layui-inline">
+            <ul class="layui-nav layui-inline layui-nav-tree" id="first-side-menu">
+                <li class="layui-nav-item no-secondMenu">
+                    <div class="round-head">
+                        <img src="static/images/roundhead.jpg" alt="">
+                    </div>
+                </li>
+                <li class="layui-nav-item no-secondMenu">
+                    <span class="sidebar-icon sidebar-icon-dashboard"></span><a href="form.html" >概况</a>
+                </li>
+                <li class="layui-nav-item">
+                    <span class="sidebar-icon sidebar-icon-shop"></span><a href="javascript:">店铺</a>
+                </li>
+                <li class="layui-nav-item">
+                    <span class="sidebar-icon sidebar-icon-goods"></span><a href="javascript:">商品</a>
+                </li>
+                <li class="layui-nav-item">
+                    <span class="sidebar-icon sidebar-icon-order"></span><a href="javascript:">订单</a>
+                </li>
+                <li class="layui-nav-item">
+                    <span class="sidebar-icon sidebar-icon-fans"></span><a href="javascript:">客户</a>
+                </li>
+                <li class="layui-nav-item">
+                    <span class="sidebar-icon sidebar-icon-data"></span><a href="javascript:">数据</a>
+                </li>
+                <li class="layui-nav-item">
+                    <span class="sidebar-icon sidebar-icon-asset"></span><a href="javascript:">资产</a>
+                </li>
+                <li class="layui-nav-item">
+                    <span class="sidebar-icon sidebar-icon-app"></span><a href="javascript:">营销</a>
+                </li>
+                <li class="layui-nav-item">
+                    <span class="sidebar-icon sidebar-icon-setting"></span><a href="javascript:">设置</a>
+                </li>
+            </ul>
+        </div>
+        <div class="pc-second-sidebar layui-inline">
+
+            <ul class="layui-nav layui-inline layui-nav-tree layui-hide"></ul>
+            <ul class="layui-nav layui-inline layui-nav-tree layui-hide">
+                <li>
+                    <span>店铺管理</span>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="form.html">店铺概况</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="1.html">微页面</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="index_v3.html">会员主页</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="index_v4.html">店铺导航</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="index_v5.html">全店风格</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="index_v5.html">公共广告</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="index_v5.html">自定义模块</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="index_v5.html">我的文件</a>
+                </li>
+            </ul>
+            <ul class="layui-nav layui-inline layui-nav-tree layui-hide">
+                <li>
+                    <span>商品管理</span>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="graph_echarts.html">商品管理</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="graph_flot.html">商品分组</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="graph_morris.html">商品页模板</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="graph_rickshaw.html">商品导入</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="graph_peity.html">分销商品</a>
+                </li>
+            </ul>
+            <ul class="layui-nav layui-inline layui-nav-tree layui-hide">
+                <li>
+                    <span>订单管理</span>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="mailbox.html">订单概况</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="mail_detail.html">所有订单</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="mail_compose.html">加星订单</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="mail_compose.html">维权订单</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="mail_compose.html">评价管理</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="mail_compose.html">分销采购单</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="mail_compose.html">批量发货</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="mail_compose.html">订单设置</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="mail_compose.html">快速打单</a>
+                </li>
+            </ul>
+            <ul class="layui-nav layui-inline layui-nav-tree layui-hide">
+                <li>
+                    <span>客户经营</span>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="contacts.html">客户概况</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="profile.html">客户管理</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="profile.html">会员管理</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="teams_board.html">会员卡</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="social_feed.html">标签管理</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="clients.html">积分管理</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="file_manager.html">粉丝管理</a>
+                </li>
+            </ul>
+            <ul class="layui-nav layui-inline layui-nav-tree layui-hide">
+                <li>
+                    <span>数据中心</span>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="contacts.html">数据概况</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="profile.html">粉丝分析</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="#">页面流量</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="teams_board.html">来源监控</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="social_feed.html">商品分析</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="clients.html">交易分析</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="file_manager.html">扫码统计</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="calendar.html">卡券统计</a>
+                </li>
+            </ul>
+            <ul class="layui-nav layui-inline layui-nav-tree layui-hide">
+                <li>
+                    <span>资产中心</span>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="typography.html">我的收入</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="1.html">储值资金</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="#">交易记录</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="buttons.html">对账单</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="tabs_panels.html">提现记录</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="notifications.html">保证金记录</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="badges_labels.html">不可用余额</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="grid_options.html">服务市场</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="plyr.html">订购关系</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="second_menuItem" href="#">发票管理</a>
+                </li>
+            </ul>
+            <ul class="layui-nav layui-inline layui-nav-tree layui-hide">
+                <li>
+                    <span>应用和营销</span>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="table_basic.html">营销中心</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="table_data_tables.html">我要推广</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="table_jqgrid.html">模版市场</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="table_foo_table.html">开放平台</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="table_bootstrap.html">APP开店
+                </a>
+                </li>
+            </ul>
+            <ul class="layui-nav layui-inline layui-nav-tree layui-hide">
+                <li>
+                    <span>设置</span>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="basic_gallery.html">店铺信息</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="carousel.html">服务协议</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="layerphotos.html">员工管理</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="blueimp.html">支付/交易</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="blueimp.html">消费保障</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="blueimp.html">订单设置</a>
+                </li>
+                <li class="layui-nav-item"><a class="second_menuItem" href="blueimp.html">通用设置</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--左侧导航结束-->
+    <div class="iframe-container">
+        <iframe src="form.html" class="index_iframe" frameborder="0" width="100%" height="1000" ></iframe>
+    </div>
+
+    <div id="zhezhao" style="display: none"></div>
+
+    <script src="static/jquery-1.11.3.js"></script>
+    <script src="layui1.0.9/layui.js"></script>
+    <script>
+      //注意：导航 依赖 element 模块，否则无法进行功能性操作
+      layui.use('element', function(){
+        var element = layui.element();
+
+        //…
+      });
+
+      var zhezhao = document.getElementById("zhezhao");
+      /* index.html内iframe标签内容切换 */
+      $(".second_menuItem").click(function () {
+      $(".index_iframe").attr("src",$(this).attr("href"));
+      return false;
+      });
+
+      $(function () {
+        function iframeHightChange() {
+          $(".index_iframe").attr("height",Number($("#first-side-menu").css("height").replace("px",""))-3);
+
+        }
+        iframeHightChange();
+        window.onresize = iframeHightChange;
+        function rightAreaSwitch() {
+          var navWidth = $('.sidebar-container').css('width');
+          var marginLeftVal =Number(navWidth.replace("px",""));
+          marginLeftVal = marginLeftVal + "px";
+          $('.iframe-container').css('margin-left',marginLeftVal);
+        }
+        rightAreaSwitch();
+        var secondMenu = $('.pc-second-sidebar ul');
+        $('.no-secondMenu').click(function () {
+          secondMenu.addClass('layui-hide');
+
+          rightAreaSwitch();
+          $(".index_iframe").attr("src",$(this).attr("href"));
+          return false;
+        });
+
+        $('#first-side-menu>li>a').each(function (index) {
+          this.onclick = function () {
+            secondMenu.addClass('layui-hide');
+            $(secondMenu[index]).removeClass('layui-hide');
+            rightAreaSwitch();
+          }
+        })
+
+
+      })
+    </script>
+</body>
+</html>

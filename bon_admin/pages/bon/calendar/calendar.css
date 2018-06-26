@@ -1,0 +1,200 @@
+/*通用样式如下*/
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+input{
+    width:30%;
+    height:10%;
+    outline: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border:none;
+    background:#EEEEEE;
+    caret-color:#2EB6A8;
+}
+table{
+    border-collapse:collapse;
+}
+tr{
+    text-align: center;
+}
+td{
+    width:1rem;
+    height:1rem;
+    border:1px solid #CCCCCC;
+    overflow:hidden;
+    position:relative;
+}
+button{
+    border:none;
+    outline: none;
+    cursor:pointer;
+}
+textarea{
+    width:35%;
+    height:2rem;
+    outline:none;
+    resize:none;
+    border:1px solid #CCCCCC;
+    position:absolute;
+    top:1.5rem;
+    left:35%;
+}
+span.content{
+    position:absolute;
+    top:1.5rem;
+    left:27%;
+    color:#000000;
+}
+/*阴历日期*/
+.lunarDay{
+    color:#999999;
+}
+/*阳历日期*/
+.solarDay{
+    font-size:.3rem;
+}
+/*整个日历设置*/
+table.calendar{
+    width:99%;
+    margin:0 auto;
+    font-size:.1rem;
+}
+/*日历头部*/
+thead.t_title>tr>th{
+    height:1rem;
+    margin:0 auto;
+    font-size:.3rem;
+    cursor:pointer;
+}
+thead.t_title>tr>th:nth-child(6){
+    color:#FF5500;
+}
+thead.t_title>tr>th:nth-child(7){
+    color:#FF5500;
+}
+@media screen and (max-width: 768px) {
+    thead.t_title>tr>th{
+          white-space: nowrap;
+          height:1rem;
+          margin:0 auto;
+          font-size:.2rem;
+          cursor:pointer;
+      }
+}
+table.calendar>tbody>tr:nth-child(1){
+    background-color:#E6E6E6;
+}
+table.calendar>tbody>tr>td:nth-child(6){
+    color:#FF5500;
+}
+table.calendar>tbody>tr>td:nth-child(7){
+    color:#FF5500;
+}
+/*每天td的样式*/
+.day{
+    cursor:pointer;
+}
+
+/*当前天*/
+.currentDay{
+    background-color: #2EB6A8;
+    color:#FFFFFF;
+}
+
+/*点击弹出框的样式*/
+.modal{
+    /*display: none;*/
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/*模态框内容*/
+.modalcontent{
+    position:relative;
+    width:50%;
+    height:5rem;
+    margin: 1.5rem auto;
+    background-color: rgb(255,255,255);
+    animation: topDown 0.4s; /*自定义动画，从模态框内容上到下出现*/
+}
+
+@keyframes topDown {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+input.contentTitle{
+    position:absolute;
+    top:.5rem;
+    left:35%;
+}
+span.title{
+    position:absolute;
+    top:.7rem;
+    left:27%;
+    color:#000000;
+}
+
+/*确定按钮*/
+#sure{
+    width:1rem;
+    height:.5rem;
+    position:absolute;
+    left:.5rem;
+    bottom:.5rem;
+    background-color: #2EB6A8;
+    color:#FFFFFF;
+    font-size:.1rem;
+}
+
+/*重写按钮*/
+#cancel{
+    width:1rem;
+    height:.5rem;
+    position:absolute;
+    right:.5rem;
+    bottom:.5rem;
+    background-color: #2EB6A8;
+    color:#FFFFFF;
+    font-size:.1rem;
+}
+
+/*多行输入框的样式*/
+div.showcontent{
+    text-align: left;
+    margin-left:.1rem;
+    width:1rem;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    color:#000000;
+}
+/*提示消息*/
+div.tips{
+    position:absolute;
+    right:0;
+    top:0;
+    width:50%;
+    height:50%;
+    background-color: rgba(0,0,0,.3);
+}
+
+/*关闭按钮*/
+.close{
+    width:.5rem;
+    height:.5rem;
+    position:absolute;
+    top:.1rem;
+    right:.1rem;
+}
+
+

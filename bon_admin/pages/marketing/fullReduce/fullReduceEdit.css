@@ -1,0 +1,96 @@
+@CHARSET "UTF-8";
+<!-- 中间表格样式 -->
+.shanpin {
+	height: 50px;
+	padding: 10px 10px 10px 34px;
+}
+.shanpin.layui-form {
+    margin-left: 35px;
+    min-width: 800px;
+}
+.shanpin div.layui-unselect {
+	display: initial;
+}
+
+#goods_list tbody tr td .shanpin div.layui-unselect i {
+	margin-bottom: 27px;
+}
+
+#goods_list2 tbody tr td .shanpin div.layui-unselect i {
+	margin-bottom: 27px;
+	margin-left: -7px;
+}
+
+#goods_list2 tfoot tr td .shanpin div.layui-unselect i{
+	margin-bottom: 27px;
+	margin-left: -7px;
+}
+
+#goods_list tfoot tr td .shanpin div.layui-unselect i{
+	margin-bottom: 27px;
+	margin-left: -7px;
+}
+
+.shanpin input {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.shanpin img {
+	margin: -30px 10px 0;
+	width: 50px;
+	height: 34px;
+}
+
+.shanpin div {
+	/**width: 75%;**/
+	height: 50px;
+	display: inline-block;
+}
+
+.sorting_disabled div.layui-unselect i {
+	margin: 0 10px 0 27px;
+}
+
+.dataTables_length div.layui-unselect {
+	display: none;
+}
+
+#joinDiv div.layui-form-radio i{
+   	margin-top: -2px;
+}
+span.tips{
+	color:red;
+	display:none;
+}
+.control-group>.reward-table-wrap {
+    padding-left: 50px;
+}
+table.reward-table{
+	width:100%;
+}
+table.reward-table tr{
+	border:1px solid #ddd;
+}
+.page-reward .reward-table tr .pl100 {
+    padding-left: 100px;
+    text-align: left;
+}
+.reward-table tr th {
+    line-height: 36px;
+    background: #f2f2f2;
+    text-align:center;
+}
+.reward-table tr td .first-reward {
+    margin-top: 5px;
+}
+p.help-block.error-message{
+	display:none;
+	color:red;
+}
+label.checkbox.inline.reward-label {
+    margin-left: 18px;
+}
+span.origin-status.show {
+    float: right;
+}
